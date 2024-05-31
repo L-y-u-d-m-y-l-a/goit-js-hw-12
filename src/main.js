@@ -45,7 +45,7 @@ const addImages = async (searchText, page = 1) => {
 
     renderImages(response.data.hits, gallery);
   } catch (error) {
-    error => console.error('Error', error);
+    console.error('Error', error);
   } finally {
     form.reset();
     loader.style.display = 'none';
