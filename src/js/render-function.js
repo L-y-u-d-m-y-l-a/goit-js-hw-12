@@ -8,7 +8,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
 });
 
 const renderImages = (arrImgs, gallery) => {
-  const HTMLElement = arrImgs.hits
+  const HTMLElement = arrImgs
     .map(
       ({
         largeImageURL,
