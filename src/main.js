@@ -24,9 +24,10 @@ iziToast.settings({
 });
 
 const addImages = async (searchText, page = 1) => {
+  loader.style.display = 'block';
+
   try {
     const response = await getArr(searchText, page);
-    loader.style.display = 'block';
 
     if (response.data.hits.length === 0) {
       return iziToast.warning({
@@ -45,7 +46,7 @@ const addImages = async (searchText, page = 1) => {
 
     renderImages(response.data.hits, gallery);
   } catch (error) {
-    error => console.error('Error', error);
+    console.log(error);
   } finally {
     form.reset();
     loader.style.display = 'none';
